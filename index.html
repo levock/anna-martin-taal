@@ -44,7 +44,8 @@
 
     <div id="content" style="display:none;">
         <div class="intro-text" id="intro-text">
-            <p><strong>Schön, dass du den Weg zu unserer Hochzeitsseite gefunden hast!</strong> Wir möchten, dass du eine schöne und unvergessliche Zeit auf den Philippinen verbringst. Gerade als Deutscher können die vielen neuen Eindrücke – vor allem nach der Ankunft in Manila – anfangs etwas überwältigend wirken.</p>
+            <p><strong>Schön, dass du den Weg zu unserer Hochzeitsseite gefunden hast!</strong></p>
+            <p>Wir möchten, dass du eine schöne und unvergessliche Zeit auf den Philippinen verbringst. Gerade als Deutscher können die vielen neuen Eindrücke – vor allem nach der Ankunft in Manila – anfangs etwas überwältigend wirken.</p>
             <p>Damit du dich vor Ort nicht ganz allein fühlst, haben wir einen Reiseplan zusammengestellt, an dem du gerne teilnehmen kannst. Auch die Transfers von Manila nach Taal und zurück organisieren wir gerne für dich. Im Anschluss an die Hochzeit würden wir uns freuen, noch ein paar gemeinsame Tage mit dir in El Nido zu verbringen und die Gegend gemeinsam zu erkunden.</p>
         </div>
 
@@ -74,8 +75,10 @@
         <div class="card">
             <h2 id="el-nido-title">🏝️ El Nido Reise</h2>
             <p id="el-nido-content">
-                Nach der Hochzeit möchten wir gerne noch ein paar Tage mit euch auf Palawan verbringen! Unser Ziel ist El Nido, nur etwa eine Flugstunde von Manila entfernt und einer der schönsten Orte der Philippinen. Dort erwarten euch traumhafte Inseln, weite Strände und faszinierende Korallenriffe – vergesst also nicht eure Badesachen! Außerdem könnt ihr verschiedene „Island-Hopping“-Touren erleben, die wir gerne für euch organisieren.
+                Nach der Hochzeit möchten wir gerne noch ein paar Tage mit euch auf Palawan verbringen! Unser Ziel ist El Nido, nur etwa eine Flugstunde von Manila entfernt und einer der schönsten Orte der Philippinen. Dort erwarten euch traumhafte Inseln, weite Strände und faszinierende Korallenriffe – vergesst also nicht eure Badesachen! Sehr zu empfehlen sind die „Island-Hopping“-Touren erleben, die wir gerne für unsere Gruppe organisieren.
             </p>
+            <!-- Eingebundene Google Maps Karte für El Nido -->
+            <iframe src="https://www.google.com/maps?q=El+Nido,+Philippines&output=embed" width="100%" height="300" style="border:0;" loading="lazy" allowfullscreen></iframe>
         </div>
 
         <div class="card">
@@ -95,20 +98,21 @@
 
         <div class="card">
             <h2 id="faq-title">❓ FAQ</h2>
-            <div class="faq-question" onclick="toggleFaq('faq1')">Wie heiß wird es?</div>
-            <div id="faq1" class="faq-answer">
-                <p id="faq1-answer-de">Tagsüber kann es durchaus weit über 30 Grad heiß werden. Denkt daher bitte daran, ausreichend Sonnencreme einzupacken und genug zu trinken. Die meisten Supermärkte, Hotels und andere öffentliche Gebäude sind in der Regel aber klimatisiert.</p>
-                <p id="faq1-answer-en" style="display:none;">During the day it can get well over 30 degrees. So please remember to pack enough sunscreen and drink plenty of water. Most supermarkets, hotels, and other buildings are usually air-conditioned.</p>
+            <!-- Reihenfolge der FAQs wurde umgedreht -->
+            <div class="faq-question" onclick="toggleFaq('faq3')">Was muss ich selber organisieren?</div>
+            <div id="faq3" class="faq-answer">
+                <p id="faq3-answer-de">Um Hotels und Flüge müsst ihr euch selber kümmern. Gerne unterstützen wir euch aber dabei! Wir waren schon einmal in El Nido und können euch ein paar Hotels empfehlen. Kommt bevor ihr etwas bucht gerne auf uns zu, damit wir nicht so weit verstreut sind.</p>
+                <p id="faq3-answer-en" style="display:none;">You need to organize hotels and flights yourself. We are happy to support you though! We have been to El Nido before and can recommend some hotels. Please contact us before booking anything, so we are not too scattered.</p>
             </div>
             <div class="faq-question" onclick="toggleFaq('faq2')">Benötige ich Impfungen?</div>
             <div id="faq2" class="faq-answer">
                 <p id="faq2-answer-de">Ja, bitte informiert euch über die aktuellen STIKO-Empfehlungen für die Philippinen. El Nido und Manila zählen jedoch nicht zu den Malaria-Gebieten.</p>
                 <p id="faq2-answer-en" style="display:none;">Yes, please check the current STIKO recommendations for the Philippines. However, El Nido and Manila are not considered malaria areas.</p>
             </div>
-            <div class="faq-question" onclick="toggleFaq('faq3')">Was muss ich selber organisieren?</div>
-            <div id="faq3" class="faq-answer">
-                <p id="faq3-answer-de">Um Hotels und Flüge müsst ihr euch selber kümmern. Gerne unterstützen wir euch aber dabei! Wir waren schon einmal in El Nido und können euch ein paar Hotels empfehlen. Kommt bevor ihr etwas bucht gerne auf uns zu, damit wir nicht so weit verstreut sind.</p>
-                <p id="faq3-answer-en" style="display:none;">You need to organize hotels and flights yourself. We are happy to support you though! We have been to El Nido before and can recommend some hotels. Please contact us before booking anything, so we are not too scattered.</p>
+            <div class="faq-question" onclick="toggleFaq('faq1')">Wie heiß wird es?</div>
+            <div id="faq1" class="faq-answer">
+                <p id="faq1-answer-de">Tagsüber kann es durchaus weit über 30 Grad heiß werden. Denkt daher bitte daran, ausreichend Sonnencreme einzupacken und genug zu trinken. Die meisten Supermärkte, Hotels und andere öffentliche Gebäude sind in der Regel aber klimatisiert.</p>
+                <p id="faq1-answer-en" style="display:none;">During the day it can get well over 30 degrees. So please remember to pack enough sunscreen and drink plenty of water. Most supermarkets, hotels, and other buildings are usually air-conditioned.</p>
             </div>
         </div>
 
@@ -130,7 +134,9 @@ async function hashPassword(password) {
     const encoder = new TextEncoder();
     const data = encoder.encode(password);
     const hash = await crypto.subtle.digest('SHA-256', data);
-    return Array.from(new Uint8Array(hash)).map(b => b.toString(16).padStart(2, '0')).join('');
+    return Array.from(new Uint8Array(hash))
+        .map(b => b.toString(16).padStart(2, '0'))
+        .join('');
 }
 
 function switchLanguage(lang) {
@@ -147,8 +153,8 @@ function switchLanguage(lang) {
     document.getElementById("title").innerText = lang === "de" ? "Hochzeit von Anna Sophia & Martin" : "Wedding of Anna Sophia & Martin";
     document.getElementById("subtitle").innerText = lang === "de" ? "10. März 2026 · Nuuk Taal, Philippinen" : "March 10, 2026 · Nuuk Taal, Philippines";
     document.getElementById("intro-text").innerHTML = lang === "de"
-        ? "<strong>Schön, dass du den Weg zu unserer Hochzeitsseite gefunden hast!</strong> Wir möchten, dass du eine schöne und unvergessliche Zeit auf den Philippinen verbringst. Gerade als Deutscher können die vielen neuen Eindrücke – vor allem nach der Ankunft in Manila – anfangs etwas überwältigend wirken.<br><br>Damit du dich vor Ort nicht ganz allein fühlst, haben wir einen Reiseplan zusammengestellt, an dem du gerne teilnehmen kannst. Auch die Transfers von Manila nach Taal und zurück organisieren wir gerne für dich. Im Anschluss an die Hochzeit würden wir uns freuen, noch ein paar gemeinsame Tage mit dir in El Nido zu verbringen und die Gegend gemeinsam zu erkunden."
-        : "<strong>Welcome to our wedding website!</strong> We want you to have a wonderful and unforgettable time in the Philippines.";
+        ? "<p><strong>Schön, dass du den Weg zu unserer Hochzeitsseite gefunden hast!</strong></p><p>Wir möchten, dass du eine schöne und unvergessliche Zeit auf den Philippinen verbringst. Gerade als Deutscher können die vielen neuen Eindrücke – vor allem nach der Ankunft in Manila – anfangs etwas überwältigend wirken.</p><p>Damit du dich vor Ort nicht ganz allein fühlst, haben wir einen Reiseplan zusammengestellt, an dem du gerne teilnehmen kannst. Auch die Transfers von Manila nach Taal und zurück organisieren wir gerne für dich. Im Anschluss an die Hochzeit würden wir uns freuen, noch ein paar gemeinsame Tage mit dir in El Nido zu verbringen und die Gegend gemeinsam zu erkunden.</p>"
+        : "<p><strong>Welcome to our wedding website!</strong></p><p>We want you to have a wonderful and unforgettable time in the Philippines.</p>";
     
     document.getElementById("schedule-title").innerText = lang === "de" ? "🌺 Reiseplan" : "🌺 Travel Plan";
     document.getElementById("schedule-content").innerHTML = lang === "de"
@@ -166,7 +172,7 @@ function switchLanguage(lang) {
     
     document.getElementById("el-nido-title").innerText = lang === "de" ? "🏝️ El Nido Reise" : "🏝️ El Nido Trip";
     document.getElementById("el-nido-content").innerHTML = lang === "de"
-        ? "Nach der Hochzeit möchten wir gerne noch ein paar Tage mit euch auf Palawan verbringen! Unser Ziel ist El Nido, nur etwa eine Flugstunde von Manila entfernt und einer der schönsten Orte der Philippinen. Dort erwarten euch traumhafte Inseln, weite Strände und faszinierende Korallenriffe – vergesst also nicht eure Badesachen! Außerdem könnt ihr verschiedene „Island-Hopping“-Touren erleben, die wir gerne für euch organisieren."
+        ? "Nach der Hochzeit möchten wir gerne noch ein paar Tage mit euch auf Palawan verbringen! Unser Ziel ist El Nido, nur etwa eine Flugstunde von Manila entfernt und einer der schönsten Orte der Philippinen. Dort erwarten euch traumhafte Inseln, weite Strände und faszinierende Korallenriffe – vergesst also nicht eure Badesachen! Sehr zu empfehlen sind die „Island-Hopping“-Touren erleben, die wir gerne für unsere Gruppe organisieren."
         : "After the wedding, we would like to spend a few days with you on Palawan! Our destination is El Nido, only about an hour's flight from Manila and one of the most beautiful places in the Philippines. There you will find dreamlike islands, wide beaches, and fascinating coral reefs - so don't forget your swimwear! You can also experience various 'island hopping' tours, which we are happy to organize for you.";
     
     document.getElementById("gifts-title").innerText = lang === "de" ? "🎁 Geschenke" : "🎁 Gifts";
@@ -177,13 +183,14 @@ function switchLanguage(lang) {
     document.getElementById("location-title").innerText = lang === "de" ? "📍 Hochzeitslocation" : "📍 Wedding Location";
     
     document.getElementById("faq-title").innerText = lang === "de" ? "❓ FAQ" : "❓ FAQ";
+    // Angepasste Reihenfolge: 0: FAQ3, 1: FAQ2, 2: FAQ1
     document.querySelectorAll('.faq-question').forEach((element, index) => {
         if(index === 0) {
-            element.innerText = lang === "de" ? "Wie heiß wird es?" : "How hot will it be?";
+            element.innerText = lang === "de" ? "Was muss ich selber organisieren?" : "What do I need to organize myself?";
         } else if(index === 1) {
             element.innerText = lang === "de" ? "Benötige ich Impfungen?" : "Do I need vaccinations?";
         } else if(index === 2) {
-            element.innerText = lang === "de" ? "Was muss ich selber organisieren?" : "What do I need to organize myself?";
+            element.innerText = lang === "de" ? "Wie heiß wird es?" : "How hot will it be?";
         }
     });
     document.getElementById("faq1-answer-de").style.display = lang === "de" ? "block" : "none";
