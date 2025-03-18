@@ -6,6 +6,109 @@
     <title>Wedding of Anna Sophia & Martin</title>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@600&family=Raleway:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <script>
+        function storePassword() {
+            const password = document.getElementById('password-input').value;
+            sessionStorage.setItem('password', password);
+        }
+
+        function retrievePassword() {
+            const storedPassword = sessionStorage.getItem('password');
+            if (storedPassword) {
+                document.getElementById('password-input').value = storedPassword;
+                checkPassword();
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            retrievePassword();
+        });
+
+        let selectedLanguage = "de";
+
+        // Function to hash the password using SHA-256
+        async function hashPassword(password) {
+            const encoder = new TextEncoder();
+            const data = encoder.encode(password);
+            const hash = await crypto.subtle.digest('SHA-256', data);
+            return Array.from(new Uint8Array(hash)).map(b => b.toString(16).padStart(2, '0')).join('');
+        }
+
+        function switchLanguage(lang) {
+            selectedLanguage = lang;
+
+            // Passwortseite übersetzen
+            document.getElementById("password-title").innerText = lang === "de" ? "Bitte gib den Code ein:" : "Please enter the code:";
+            document.getElementById("password-button").innerText = lang === "de" ? "Bestätigen" : "Confirm";
+
+            // Fehlernachricht zurücksetzen
+            document.getElementById("error-message").innerText = "";
+
+            // Texte in den Hauptinhalten ändern
+            document.getElementById("title").innerText = lang === "de" ? "Hochzeit von Anna Sophia & Martin" : "Wedding of Anna Sophia & Martin";
+            document.getElementById("subtitle").innerText = lang === "de" ? "10. März 2026 · Nuuk Taal, Philippinen" : "March 10, 2026 · Nuuk Taal, Philippines";
+            document.getElementById("intro-text").innerHTML = lang === "de"
+                ? "<strong>Schön, dass du den Weg zu unserer Hochzeitsseite gefunden hast!</strong> Wir möchten, dass du eine schöne und unvergessliche Zeit auf den Philippinen verbringst."
+                : "<strong>Welcome to our wedding website!</strong> We want you to have a wonderful and unforgettable time in the Philippines.";
+
+            document.getElementById("schedule-title").innerText = lang === "de" ? "🌺 Reiseplan" : "🌺 Travel Plan";
+            document.getElementById("schedule-content").innerHTML = lang === "de"
+                ? "07.03: Ankunft Manila<br>08.03: Manila entdecken<br>09.03: Transfer Taal<br><strong>10.03: Hochzeitstag</strong><br>11.03: Transfer Manila<br>12.03: Flug El Nido<br>16.03: Rückflug Manila"
+                : "March 7: Arrival in Manila<br>March 8: Explore Manila<br>March 9: Transfer to Taal<br><strong>March 10: Wedding Day</strong><br>March 11: Transfer to Manila<br>March 12: Flight to El Nido<br>March 16: Return to Manila";
+
+            document.getElementById("wedding-title").innerText = lang === "de" ? "💍 Hochzeitstag" : "💍 Wedding Day";
+            document.getElementById("wedding-date").innerHTML = lang === "de" ? "<strong>Datum:</strong> 10. März 2026" : "<strong>Date:</strong> March 10, 2026";
+            document.getElementById("wedding-time").innerHTML = lang === "de" ? "<strong>Uhrzeit:</strong> 16:00 Uhr" : "<strong>Time:</strong> 4:00 PM";
+            document.getElementById("wedding-location").innerHTML = lang === "de" ? "<strong>Ort:</strong> Nuuk Taal, Talisay, Batangas, Philippinen" : "<strong>Location:</strong> Nuuk Taal, Talisay, Batangas, Philippines";
+            document.getElementById("wedding-dresscode").innerHTML = lang === "de" 
+                ? "<strong>Dresscode:</strong> Sommerlich elegant, gerne Barong Tagalog und luftige Kleider. Bitte verzichtet auf hohe Schuhe, da die Feier im Freien stattfindet."
+                : "<strong>Dress Code:</strong> Summer elegant, preferably Barong Tagalog and airy dresses. Please avoid high heels as the celebration will be outdoors.";
+            document.getElementById("wedding-dinner").innerHTML = lang === "de" ? "<strong>Abendessen & Feier:</strong> Direkt im Anschluss an die Trauung." : "<strong>Dinner & Celebration:</strong> Immediately after the ceremony.";
+
+            document.getElementById("el-nido-title").innerText = lang === "de" ? "🏝️ El Nido Reise" : "🏝️ El Nido Trip";
+            document.getElementById("el-nido-content").innerHTML = lang === "de"
+                ? "Nach der Hochzeit würden wir gerne ein paar Tage mit euch auf Palawan verbringen. Wir planen eine Reise nach El Nido – etwa eine Flugstunde von Manila entfernt – das zu den schönsten Orten der Philippinen zählt."
+                : "After the wedding, we would like to spend a few days with you on Palawan. We are planning a trip to El Nido – about an hour's flight from Manila – which is one of the most beautiful places in the Philippines.";
+
+            document.getElementById("gifts-title").innerText = lang === "de" ? "🎁 Geschenke" : "🎁 Gifts";
+            document.getElementById("gifts-content").innerHTML = lang === "de"
+                ? "Eure Anwesenheit ist unser schönstes Geschenk. Wenn ihr uns dennoch etwas schenken möchtet, freuen wir uns über einen Beitrag zu unserer Hochzeitsreise, damit unser Gepäck leichter bleibt! 😊"
+                : "Your presence is our greatest gift. If you would still like to give us something, we would appreciate a contribution to our honeymoon, so our luggage stays light! 😊";
+
+            document.getElementById("location-title").innerText = lang === "de" ? "📍 Hochzeitslocation" : "📍 Wedding Location";
+
+            // Sprache für den Inhalt setzen
+            document.getElementById("content-de").style.display = lang === "de" ? "block" : "none";
+            document.getElementById("content-en").style.display = lang === "de" ? "none" : "block";
+        }
+
+        async function checkPassword() {
+            const password = document.getElementById("password-input").value.toLowerCase();
+            const hashedPassword = await hashPassword(password);
+            
+            console.log("Generated Hash:", hashedPassword); // Add this line to log the generated hash
+            
+            const storedHashedPassword = "f84a6118265b6714e69a62e3ce760c8ae42c6712e3359dec67f6070b67ca562a";
+            
+            if (hashedPassword === storedHashedPassword) {
+                document.getElementById("password-section").style.display = "none";
+                document.getElementById("content").style.display = "block";
+
+                // Sprache nach der Passworteingabe setzen
+                switchLanguage(selectedLanguage);
+
+                // Store password in session
+                storePassword();
+            } else {
+                document.getElementById("error-message").innerText = selectedLanguage === "de" ? "Falscher Code!" : "Incorrect code!";
+            }
+        }
+
+        // Standardmäßig Inhalte verstecken
+        document.addEventListener("DOMContentLoaded", function() {
+            document.getElementById("content").style.display = "none";
+        });
+    </script>
 </head>
 <body>
 
@@ -78,90 +181,6 @@
         </div>
     </div>
 </div>
-
-<script>
-let selectedLanguage = "de";
-
-// Function to hash the password using SHA-256
-async function hashPassword(password) {
-    const encoder = new TextEncoder();
-    const data = encoder.encode(password);
-    const hash = await crypto.subtle.digest('SHA-256', data);
-    return Array.from(new Uint8Array(hash)).map(b => b.toString(16).padStart(2, '0')).join('');
-}
-
-function switchLanguage(lang) {
-    selectedLanguage = lang;
-
-    // Passwortseite übersetzen
-    document.getElementById("password-title").innerText = lang === "de" ? "Bitte gib den Code ein:" : "Please enter the code:";
-    document.getElementById("password-button").innerText = lang === "de" ? "Bestätigen" : "Confirm";
-
-    // Fehlernachricht zurücksetzen
-    document.getElementById("error-message").innerText = "";
-
-    // Texte in den Hauptinhalten ändern
-    document.getElementById("title").innerText = lang === "de" ? "Hochzeit von Anna Sophia & Martin" : "Wedding of Anna Sophia & Martin";
-    document.getElementById("subtitle").innerText = lang === "de" ? "10. März 2026 · Nuuk Taal, Philippinen" : "March 10, 2026 · Nuuk Taal, Philippines";
-    document.getElementById("intro-text").innerHTML = lang === "de"
-        ? "<strong>Schön, dass du den Weg zu unserer Hochzeitsseite gefunden hast!</strong> Wir möchten, dass du eine schöne und unvergessliche Zeit auf den Philippinen verbringst."
-        : "<strong>Welcome to our wedding website!</strong> We want you to have a wonderful and unforgettable time in the Philippines.";
-
-    document.getElementById("schedule-title").innerText = lang === "de" ? "🌺 Reiseplan" : "🌺 Travel Plan";
-    document.getElementById("schedule-content").innerHTML = lang === "de"
-        ? "07.03: Ankunft Manila<br>08.03: Manila entdecken<br>09.03: Transfer Taal<br><strong>10.03: Hochzeitstag</strong><br>11.03: Transfer Manila<br>12.03: Flug El Nido<br>16.03: Rückflug Manila"
-        : "March 7: Arrival in Manila<br>March 8: Explore Manila<br>March 9: Transfer to Taal<br><strong>March 10: Wedding Day</strong><br>March 11: Transfer to Manila<br>March 12: Flight to El Nido<br>March 16: Return to Manila";
-
-    document.getElementById("wedding-title").innerText = lang === "de" ? "💍 Hochzeitstag" : "💍 Wedding Day";
-    document.getElementById("wedding-date").innerHTML = lang === "de" ? "<strong>Datum:</strong> 10. März 2026" : "<strong>Date:</strong> March 10, 2026";
-    document.getElementById("wedding-time").innerHTML = lang === "de" ? "<strong>Uhrzeit:</strong> 16:00 Uhr" : "<strong>Time:</strong> 4:00 PM";
-    document.getElementById("wedding-location").innerHTML = lang === "de" ? "<strong>Ort:</strong> Nuuk Taal, Talisay, Batangas, Philippinen" : "<strong>Location:</strong> Nuuk Taal, Talisay, Batangas, Philippines";
-    document.getElementById("wedding-dresscode").innerHTML = lang === "de" 
-        ? "<strong>Dresscode:</strong> Sommerlich elegant, gerne Barong Tagalog und luftige Kleider. Bitte verzichtet auf hohe Schuhe, da die Feier im Freien stattfindet."
-        : "<strong>Dress Code:</strong> Summer elegant, preferably Barong Tagalog and airy dresses. Please avoid high heels as the celebration will be outdoors.";
-    document.getElementById("wedding-dinner").innerHTML = lang === "de" ? "<strong>Abendessen & Feier:</strong> Direkt im Anschluss an die Trauung." : "<strong>Dinner & Celebration:</strong> Immediately after the ceremony.";
-
-    document.getElementById("el-nido-title").innerText = lang === "de" ? "🏝️ El Nido Reise" : "🏝️ El Nido Trip";
-    document.getElementById("el-nido-content").innerHTML = lang === "de"
-        ? "Nach der Hochzeit würden wir gerne ein paar Tage mit euch auf Palawan verbringen. Wir planen eine Reise nach El Nido – etwa eine Flugstunde von Manila entfernt – das zu den schönsten Orten der Philippinen zählt."
-        : "After the wedding, we would like to spend a few days with you on Palawan. We are planning a trip to El Nido – about an hour's flight from Manila – which is one of the most beautiful places in the Philippines.";
-
-    document.getElementById("gifts-title").innerText = lang === "de" ? "🎁 Geschenke" : "🎁 Gifts";
-    document.getElementById("gifts-content").innerHTML = lang === "de"
-        ? "Eure Anwesenheit ist unser schönstes Geschenk. Wenn ihr uns dennoch etwas schenken möchtet, freuen wir uns über einen Beitrag zu unserer Hochzeitsreise, damit unser Gepäck leichter bleibt! 😊"
-        : "Your presence is our greatest gift. If you would still like to give us something, we would appreciate a contribution to our honeymoon, so our luggage stays light! 😊";
-
-    document.getElementById("location-title").innerText = lang === "de" ? "📍 Hochzeitslocation" : "📍 Wedding Location";
-
-    // Sprache für den Inhalt setzen
-    document.getElementById("content-de").style.display = lang === "de" ? "block" : "none";
-    document.getElementById("content-en").style.display = lang === "de" ? "none" : "block";
-}
-
-async function checkPassword() {
-    const password = document.getElementById("password-input").value.toLowerCase();
-    const hashedPassword = await hashPassword(password);
-    
-    console.log("Generated Hash:", hashedPassword); // Add this line to log the generated hash
-    
-    const storedHashedPassword = "f84a6118265b6714e69a62e3ce760c8ae42c6712e3359dec67f6070b67ca562a";
-    
-    if (hashedPassword === storedHashedPassword) {
-        document.getElementById("password-section").style.display = "none";
-        document.getElementById("content").style.display = "block";
-
-        // Sprache nach der Passworteingabe setzen
-        switchLanguage(selectedLanguage);
-    } else {
-        document.getElementById("error-message").innerText = selectedLanguage === "de" ? "Falscher Code!" : "Incorrect code!";
-    }
-}
-
-// Standardmäßig Inhalte verstecken
-document.addEventListener("DOMContentLoaded", function() {
-    document.getElementById("content").style.display = "none";
-});
-</script>
 
 </body>
 </html>
