@@ -10,11 +10,12 @@
 </head>
 <body>
     <div class="container">
+
         <div id="language-selection">
-            <h1>Welcome! / Willkommen!</h1>
-            <p>Please select your language / Bitte wähle deine Sprache</p>
-            <button onclick="selectLanguage('en')">English</button>
-            <button onclick="selectLanguage('de')">Deutsch</button>
+            <h1>🌸 Welcome! 🌸</h1>
+            <p>Select your language</p>
+            <button onclick="selectLanguage('en')">🇬🇧</button>
+            <button onclick="selectLanguage('de')">🇩🇪</button>
         </div>
 
         <div id="password-section" style="display:none;">
@@ -27,29 +28,36 @@
         <div id="content-en" class="content" style="display:none;">
             <h1 class="cursive">Anna & Martin's Wedding</h1>
             <p class="subtitle">March 10, 2026 · Nuuk Taal, Philippines</p>
-            <hr>
-            <h2>Our Travel Plan</h2>
-            <ul>
-                <li>07.03: Arrival Manila</li>
-                <li>08.03: Explore Manila</li>
-                <li>09.03: Transfer to Taal / Dinner with Anna's Family</li>
-                <li><strong>10.03: Wedding Day!</strong></li>
-                <li>11.03: Transfer Manila</li>
-                <li>12.03: Flight El Nido</li>
-                <li>16.03: Return Manila</li>
-            </ul>
-            <hr>
-            <h2>El Nido Trip</h2>
-            <p>We'd love you to join us for island hopping on Palawan after the wedding!</p>
-            <hr>
-            <h2>Gifts</h2>
-            <p>Your presence is our greatest gift.</p>
-            <hr>
-            <h2>Spotify Playlist</h2>
-            <p><a href="https://open.spotify.com/" target="_blank">Suggest a song for the party!</a></p>
+
+            <div class="card">
+                <h2>🌺 Travel Plan</h2>
+                <ul>
+                    <li>07.03: Arrival Manila</li>
+                    <li>08.03: Explore Manila</li>
+                    <li>09.03: Transfer Taal / Dinner Anna's Family</li>
+                    <li><strong>10.03: Wedding Day!</strong></li>
+                    <li>11.03: Transfer Manila</li>
+                    <li>12.03: Flight El Nido</li>
+                    <li>16.03: Return Manila</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h2>🏝️ El Nido Trip</h2>
+                <p>Join us for island hopping on beautiful Palawan!</p>
+            </div>
+
+            <div class="card">
+                <h2>🎁 Gifts</h2>
+                <p>Your presence is our greatest gift.</p>
+            </div>
+
+            <div class="card">
+                <h2>🎶 Spotify Playlist</h2>
+                <p><a href="https://open.spotify.com/" target="_blank">Suggest songs for the party!</a></p>
+            </div>
         </div>
     </div>
-
     <script src="script.js"></script>
 </body>
 </html>

@@ -9,9 +9,9 @@ function selectLanguage(lang) {
 }
 
 function checkPassword() {
-    const pw = document.getElementById('password-input').value;
+    const pw = document.getElementById('password-input').value.toLowerCase();
     const errorMsg = document.getElementById('error-message');
-    if (pw === 'Taal2026') {
+    if (pw === 'taal2026') {
         document.getElementById('password-section').style.display = 'none';
         document.getElementById('content-' + selectedLanguage).style.display = 'block';
     } else {
