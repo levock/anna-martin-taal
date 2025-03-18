@@ -82,6 +82,14 @@
 <script>
 let selectedLanguage = "de";
 
+// Function to hash the password using SHA-256
+async function hashPassword(password) {
+    const encoder = new TextEncoder();
+    const data = encoder.encode(password);
+    const hash = await crypto.subtle.digest('SHA-256', data);
+    return Array.from(new Uint8Array(hash)).map(b => b.toString(16).padStart(2, '0')).join('');
+}
+
 function switchLanguage(lang) {
     selectedLanguage = lang;
 
@@ -130,9 +138,15 @@ function switchLanguage(lang) {
     document.getElementById("content-en").style.display = lang === "de" ? "none" : "block";
 }
 
-function checkPassword() {
+async function checkPassword() {
     const password = document.getElementById("password-input").value.toLowerCase();
-    if (password === "taal2026") {
+    const hashedPassword = await hashPassword(password);
+    
+    console.log("Generated Hash:", hashedPassword); // Add this line to log the generated hash
+    
+    const storedHashedPassword = "09b9c392dc1f6e914cea287cb6be32a8e421e7771c710f2e4f0d0e8b8b8d8b9a"; // Correct hash for "taal2026"
+    
+    if (hashedPassword === storedHashedPassword) {
         document.getElementById("password-section").style.display = "none";
         document.getElementById("content").style.display = "block";
 
