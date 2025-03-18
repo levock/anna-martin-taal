@@ -51,13 +51,13 @@
         <div class="card">
             <h2 id="schedule-title">🌺 Reiseplan</h2>
             <p id="schedule-content" class="schedule">
-                07.03: Ankunft Manila<br>
-                08.03: Manila entdecken<br>
-                09.03: Transfer Taal<br>
+                07.03: Ankunft in Manila<br>
+                08.03: Entspannen und Jetlag kurieren oder Manila entdecken<br>
+                09.03: Transfer zum Taal<br>
                 <strong>10.03: Hochzeitstag</strong><br>
-                11.03: Transfer Manila<br>
-                12.03: Flug El Nido<br>
-                16.03: Rückflug Manila
+                11.03: Transfer nach Manila<br>
+                12.03: Flug nach El Nido<br>
+                16.03: Rückflug nach Manila
             </p>
         </div>
 
@@ -99,7 +99,7 @@
             <h2 id="faq-title">❓ FAQ</h2>
             <div class="faq-question" onclick="toggleFaq('faq1')">Wie heiß wird es?</div>
             <div id="faq1" class="faq-answer">
-                <p id="faq1-answer-de">Tagsüber kann es durchaus weit über 30 Grad heiß werden. Denkt daher bitte daran, ausreichend Sonnencreme einzupacken und genug zu trinken. Die meisten Supermärkte, Hotels und andere Gebäude sind in der Regel jedoch klimatisiert.</p>
+                <p id="faq1-answer-de">Tagsüber kann es durchaus weit über 30 Grad heiß werden. Denkt daher bitte daran, ausreichend Sonnencreme einzupacken und genug zu trinken. Die meisten Supermärkte, Hotels und andere öffentliche Gebäude sind in der Regel aber klimatisiert.</p>
                 <p id="faq1-answer-en" style="display:none;">During the day it can get well over 30 degrees. So please remember to pack enough sunscreen and drink plenty of water. Most supermarkets, hotels, and other buildings are usually air-conditioned.</p>
             </div>
             <div class="faq-question" onclick="toggleFaq('faq2')">Benötige ich Impfungen?</div>
@@ -107,6 +107,14 @@
                 <p id="faq2-answer-de">Ja, bitte informiert euch über die aktuellen STIKO-Empfehlungen für die Philippinen. El Nido und Manila zählen jedoch nicht zu den Malaria-Gebieten.</p>
                 <p id="faq2-answer-en" style="display:none;">Yes, please check the current STIKO recommendations for the Philippines. However, El Nido and Manila are not considered malaria areas.</p>
             </div>
+        </div>
+
+        <div class="card">
+            <h2 id="response-title">📩 Rückmeldung</h2>
+            <p id="response-content">
+                Damit wir besser planen können, gebt uns bitte spätestens bis zum <strong>01.10.2025</strong> Bescheid, ob ihr dabei seid. 
+                Falls ihr noch Fragen habt, schreibt uns einfach – am liebsten über WhatsApp. :)
+            </p>
         </div>
     </div>
 </div>
@@ -141,8 +149,8 @@ function switchLanguage(lang) {
 
     document.getElementById("schedule-title").innerText = lang === "de" ? "🌺 Reiseplan" : "🌺 Travel Plan";
     document.getElementById("schedule-content").innerHTML = lang === "de"
-        ? "07.03: Ankunft Manila<br>08.03: Manila entdecken<br>09.03: Transfer Taal<br><strong>10.03: Hochzeitstag</strong><br>11.03: Transfer Manila<br>12.03: Flug El Nido<br>16.03: Rückflug Manila"
-        : "March 7: Arrival in Manila<br>March 8: Explore Manila<br>March 9: Transfer to Taal<br><strong>March 10: Wedding Day</strong><br>March 11: Transfer to Manila<br>March 12: Flight to El Nido<br>March 16: Return flight to Manila";
+        ? "07.03: Ankunft in Manila<br>08.03: Entspannen und Jetlag kurieren oder Manila entdecken<br>09.03: Transfer zum Taal<br><strong>10.03: Hochzeitstag</strong><br>11.03: Transfer nach Manila<br>12.03: Flug nach El Nido<br>16.03: Rückflug nach Manila"
+        : "March 7: Arrival in Manila<br>March 8: Relax and recover from jet lag or explore Manila<br>March 9: Transfer to Taal<br><strong>March 10: Wedding Day</strong><br>March 11: Transfer to Manila<br>March 12: Flight to El Nido<br>March 16: Return flight to Manila";
 
     document.getElementById("wedding-title").innerText = lang === "de" ? "💍 Hochzeitstag" : "💍 Wedding Day";
     document.getElementById("wedding-date").innerHTML = lang === "de" ? "<strong>Datum:</strong> 10. März 2026" : "<strong>Date:</strong> March 10, 2026";
@@ -177,6 +185,11 @@ function switchLanguage(lang) {
     document.getElementById("faq1-answer-en").style.display = lang === "de" ? "none" : "block";
     document.getElementById("faq2-answer-de").style.display = lang === "de" ? "block" : "none";
     document.getElementById("faq2-answer-en").style.display = lang === "de" ? "none" : "block";
+
+    document.getElementById("response-title").innerText = lang === "de" ? "📩 Rückmeldung" : "📩 Response";
+    document.getElementById("response-content").innerHTML = lang === "de"
+        ? "Damit wir besser planen können, gebt uns bitte spätestens bis zum <strong>01.10.2025</strong> Bescheid, ob ihr dabei seid. Falls ihr noch Fragen habt, schreibt uns einfach – am liebsten über WhatsApp. :)"
+        : "To help us plan better, please let us know by <strong>01.10.2025</strong> if you will be joining us. If you have any other questions, don't hesitate to write to us, preferably via WhatsApp. :)";
 }
 
 function toggleFaq(faqId) {
