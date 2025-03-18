@@ -1,8 +1,7 @@
 
-body { font-family: 'Raleway', sans-serif; background-color: #fdfbf2; color: #333; padding: 20px; }
-.container { max-width: 700px; margin: auto; padding: 30px; text-align: center; }
-.wedding-title { font-family: 'Dancing Script', cursive; font-size: 50px; color: #6B8061; text-align: center; margin-bottom: 10px; }
-.wedding-subtitle { font-family: 'Montserrat', sans-serif; font-size: 20px; color: #333; text-align: center; margin-bottom: 30px; }
-.schedule { text-align: center; font-size: 18px; line-height: 1.8; font-weight: 500; }
-button { font-size: 25px; background: none; border: none; cursor: pointer; }
-@media (max-width: 600px) { .container { padding: 15px; } }
+.wedding-day {
+    font-family: 'Dancing Script', cursive;
+    font-size: 20px;
+    font-weight: bold;
+    color: #6B8061;
+}
