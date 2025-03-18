@@ -4,22 +4,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anna & Martin's Wedding</title>
+    <title>Wedding of Anna Sophia & Martin</title>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@600&family=Raleway:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+<div id="language-switcher" style="position: absolute; top: 10px; right: 20px;">
+    <button class="flag-button" onclick="switchLanguage('en')">🇬🇧</button>
+    <button class="flag-button" onclick="switchLanguage('de')">🇩🇪</button>
+</div>
+
 <div class="container">
-    <h1 class="wedding-title">Anna & Martin</h1>
+    <h1 class="wedding-title">Wedding of Anna Sophia & Martin</h1>
     <p class="wedding-subtitle">10. März 2026 · Nuuk Taal, Philippinen</p>
 
-    <div id="language-selection">
-        <h2>🌍 Bitte wähle deine Sprache / Please select your language:</h2>
-        <button class="flag-button" onclick="selectLanguage('en')">🇬🇧</button>
-        <button class="flag-button" onclick="selectLanguage('de')">🇩🇪</button>
-    </div>
-
-    <div id="password-section" style="display:none;">
+    <div id="password-section">
         <h2 id="password-title">Bitte gib den Code ein:</h2>
         <input type="password" id="password-input" placeholder="Enter code">
         <button onclick="checkPassword()">Bestätigen</button>
@@ -43,28 +43,55 @@
                 16.03: Rückflug Manila
             </p>
         </div>
+
+        <div class="card">
+            <h2>💍 Hochzeitstag</h2>
+            <p><strong>Datum:</strong> 10. März 2026</p>
+            <p><strong>Uhrzeit:</strong> 16:00 Uhr</p>
+            <p><strong>Ort:</strong> Nuuk Taal, Talisay, Batangas, Philippinen</p>
+            <p><strong>Dresscode:</strong> Sommerlich elegant, gerne Barong Tagalog und luftige Kleider. Bitte verzichtet auf hohe Schuhe, da die Feier im Freien stattfindet.</p>
+            <p><strong>Abendessen & Feier:</strong> Direkt im Anschluss an die Trauung.</p>
+        </div>
+
+        <div class="card">
+            <h2>🏝️ El Nido Reise</h2>
+            <p>Nach der Hochzeit würden wir gerne ein paar Tage mit euch auf Palawan verbringen. Wir planen eine Reise nach El Nido – etwa eine Flugstunde von Manila entfernt – das zu den schönsten Orten der Philippinen zählt.</p>
+        </div>
+
+        <div class="card">
+            <h2>🎁 Geschenke</h2>
+            <p>Eure Anwesenheit ist unser schönstes Geschenk. Wenn ihr uns dennoch etwas schenken möchtet, freuen wir uns über einen Beitrag zu unserer Hochzeitsreise, damit unser Gepäck leichter bleibt! 😊</p>
+        </div>
+
+        <div class="card">
+            <h2>📍 Hochzeitslocation</h2>
+            <iframe src="https://www.google.com/maps?q=Nuuk+Taal+Batangas+Philippines&output=embed"
+                width="100%" height="300" style="border:0;" loading="lazy" allowfullscreen></iframe>
+        </div>
     </div>
 </div>
 
 <script>
-let selectedLanguage = 'de';
-
-function selectLanguage(lang) {
-    selectedLanguage = lang;
-    document.getElementById("language-selection").style.display = "none";
-    document.getElementById("password-section").style.display = "block";
-    document.getElementById("password-title").innerText = lang === "de" ? "Bitte gib den Code ein:" : "Please enter the code:";
-}
-
 function checkPassword() {
     const password = document.getElementById("password-input").value.toLowerCase();
     if (password === "taal2026") {
         document.getElementById("password-section").style.display = "none";
         document.getElementById("content").style.display = "block";
     } else {
-        document.getElementById("error-message").innerText = selectedLanguage === "de" ? "Falscher Code!" : "Incorrect code!";
+        document.getElementById("error-message").innerText = "Falscher Code!";
     }
 }
+
+function switchLanguage(lang) {
+    if (lang === "de") {
+        document.getElementById("content-en").style.display = "none";
+        document.getElementById("content-de").style.display = "block";
+    } else {
+        document.getElementById("content-de").style.display = "none";
+        document.getElementById("content-en").style.display = "block";
+    }
+}
+
 </script>
 
 </body>
