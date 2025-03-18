@@ -154,6 +154,9 @@ function switchLanguage(lang) {
   document.getElementById("title").innerText = lang === "de" ? "Hochzeit von Anna Sophia & Martin" : "Wedding of Anna Sophia & Martin";
   document.getElementById("subtitle").innerText = lang === "de" ? "10. März 2026 · Nuuk Taal, Philippinen" : "March 10, 2026 · Nuuk Taal, Philippines";
   
+  // Einleitungstitel anpassen
+  document.getElementById("intro-title").innerText = lang === "de" ? "Willkommen auf unserer Hochzeitseite" : "Welcome to our Wedding Website";
+  
   document.getElementById("intro-text").innerHTML = lang === "de"
     ? "<p>Schön, dass du den Weg zu unserer Hochzeitsseite gefunden hast!</p><p>Hier erfährst du, was wir geplant haben und was sonst noch wichtig ist. Wir möchten, dass du eine schöne und unvergessliche Zeit auf den Philippinen verbringst. Die vielen neuen Eindrücke – vor allem nach der Ankunft in Manila – können anfangs etwas überwältigend wirken. Die Straßen sind voll und es ist laut. Wenn man das Land aber etwas besser kennenlernt, ist es mit Sicherheit eines der schönsten.</p><p>Daher haben wir einen kleinen Reiseplan zusammengestellt, an dem du gerne teilnehmen kannst.</p><p>Auch die Transfers von Manila nach Taal und zurück organisieren wir gerne für dich.</p><p>Im Anschluss an die Hochzeit würden wir uns freuen, noch ein paar gemeinsame Tage mit dir in El Nido zu verbringen und die Gegend gemeinsam zu erkunden.</p>"
     : "<p><strong>Welcome to our wedding website!</strong></p><p>We want you to have a wonderful and unforgettable time in the Philippines.</p>";
