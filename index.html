@@ -1,1 +1,81 @@
-<!DOCTYPE html><html lang='en'><head><meta charset='UTF-8'><title>Welcome</title></head><body><h1>Welcome to our wedding website!</h1></body></html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anna & Martin's Wedding</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div id="language-selection">
+            <h1>Welcome! / Willkommen!</h1>
+            <p>Please select your language / Bitte wähle deine Sprache</p>
+            <button onclick="selectLanguage('en')">English</button>
+            <button onclick="selectLanguage('de')">Deutsch</button>
+        </div>
+
+        <div id="password-section" style="display:none;">
+            <h2 id="password-title">Please enter the code:</h2>
+            <input type="password" id="password-input" placeholder="Enter code">
+            <button onclick="checkPassword()">Submit</button>
+            <p id="error-message" style="color:red;"></p>
+        </div>
+
+        <div id="content-en" class="content" style="display:none;">
+            <h1>Anna & Martin's Wedding</h1>
+            <p><strong>Date:</strong> March 10, 2026</p>
+            <p><strong>Location:</strong> <a href="https://www.nuuktaal.com" target="_blank">Nuuk Taal, Philippines</a></p>
+
+            <h2>Our Travel Plan</h2>
+            <ul>
+                <li>07.03.2026: Arrival in Manila</li>
+                <li>08.03.2026: Explore Manila</li>
+                <li>09.03.2026: Transfer to Taal / Dinner with Anna's Family</li>
+                <li>10.03.2026: Wedding Day!</li>
+                <li>11.03.2026: Transfer back to Manila</li>
+                <li>12.03.2026: Flight to El Nido</li>
+                <li>16.03.2026: Return to Manila</li>
+            </ul>
+
+            <h2>El Nido Trip</h2>
+            <p>We would love to spend a few days with you on Palawan after the wedding! We are planning an island-hopping tour in El Nido. Let us know if you are interested in joining!</p>
+
+            <h2>Gifts</h2>
+            <p>Your presence is the best gift. But if you wish, we are happy about contributions to our honeymoon!</p>
+
+            <h2>Spotify Wishlist</h2>
+            <p>Suggest a song for the party: <a href="https://open.spotify.com/" target="_blank">Our Spotify Wishlist</a></p>
+        </div>
+
+        <div id="content-de" class="content" style="display:none;">
+            <h1>Anna & Martins Hochzeit</h1>
+            <p><strong>Datum:</strong> 10. März 2026</p>
+            <p><strong>Ort:</strong> <a href="https://www.nuuktaal.com" target="_blank">Nuuk Taal, Philippinen</a></p>
+
+            <h2>Unser Reiseplan</h2>
+            <ul>
+                <li>07.03.2026: Ankunft in Manila</li>
+                <li>08.03.2026: Manila entdecken</li>
+                <li>09.03.2026: Transfer nach Taal / Abendessen mit Annas Familie</li>
+                <li>10.03.2026: Hochzeitstag!</li>
+                <li>11.03.2026: Rückfahrt nach Manila</li>
+                <li>12.03.2026: Flug nach El Nido</li>
+                <li>16.03.2026: Rückflug nach Manila</li>
+            </ul>
+
+            <h2>El Nido Reise</h2>
+            <p>Wir würden uns freuen, nach der Hochzeit ein paar Tage mit euch auf Palawan zu verbringen! Geplant ist eine Inselhopping-Tour in El Nido. Habt ihr Interesse, mitzukommen?</p>
+
+            <h2>Geschenke</h2>
+            <p>Eure Anwesenheit ist das schönste Geschenk. Wer möchte, darf gerne zu unserer Hochzeitsreise beitragen!</p>
+
+            <h2>Spotify Wunschliste</h2>
+            <p>Schlage uns einen Song für die Party vor: <a href="https://open.spotify.com/" target="_blank">Unsere Spotify-Wunschliste</a></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
