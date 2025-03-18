@@ -67,9 +67,10 @@
             <p id="wedding-date"><strong>Datum:</strong> 10. März 2026</p>
             <p id="wedding-time"><strong>Uhrzeit:</strong> 16:00 Uhr</p>
             <p id="wedding-location"><strong>Ort:</strong> Nuuk Taal, Talisay, Batangas, Philippinen</p>
-            <p id="wedding-dresscode"><strong>Dresscode:</strong> Sommerlich elegant, gerne Barong Tagalog und luftige Kleider.
-                Bitte verzichtet auf hohe Schuhe, da die Feier im Freien stattfindet.</p>
+            <p id="wedding-dresscode"><strong>Dresscode:</strong> Sommerlich elegant, gerne Barong Tagalog und luftige Kleider. Bitte verzichtet auf hohe Schuhe, da die Feier im Freien stattfindet.</p>
             <p id="wedding-dinner"><strong>Abendessen & Feier:</strong> Direkt im Anschluss an die Trauung.</p>
+            <!-- Google Maps Frame für die Hochzeitslocation -->
+            <iframe src="https://www.google.com/maps?q=Nuuk+Taal+Batangas+Philippines&output=embed" width="100%" height="300" style="border:0;" loading="lazy" allowfullscreen></iframe>
         </div>
 
         <div class="card">
@@ -84,16 +85,8 @@
         <div class="card">
             <h2 id="gifts-title">🎁 Geschenke</h2>
             <p id="gifts-content">
-                Eure Anwesenheit ist unser schönstes Geschenk. Wenn ihr uns dennoch etwas schenken möchtet,
-                freuen wir uns über einen Beitrag zu unserer Hochzeitsreise,
-                damit unser Gepäck leichter bleibt! 😊
+                Eure Anwesenheit ist unser schönstes Geschenk. Wenn ihr uns dennoch etwas schenken möchtet, freuen wir uns über einen Beitrag zu unserer Hochzeitsreise, damit unser Gepäck leichter bleibt! 😊
             </p>
-        </div>
-
-        <div class="card">
-            <h2 id="location-title">📍 Hochzeitslocation</h2>
-            <iframe src="https://www.google.com/maps?q=Nuuk+Taal+Batangas+Philippines&output=embed"
-                    width="100%" height="300" style="border:0;" loading="lazy" allowfullscreen></iframe>
         </div>
 
         <div class="card">
@@ -119,8 +112,7 @@
         <div class="card">
             <h2 id="response-title">📩 Rückmeldung</h2>
             <p id="response-content">
-                Damit wir besser planen können, gebt uns bitte spätestens bis zum <strong>01.10.2025</strong> Bescheid, ob ihr dabei seid. 
-                Falls ihr noch Fragen habt, schreibt uns einfach – am liebsten über WhatsApp. :)
+                Damit wir besser planen können, gebt uns bitte spätestens bis zum <strong>01.10.2025</strong> Bescheid, ob ihr dabei seid. Falls ihr noch Fragen habt, schreibt uns einfach – am liebsten über WhatsApp. :)
             </p>
         </div>
     </div>
@@ -179,8 +171,6 @@ function switchLanguage(lang) {
     document.getElementById("gifts-content").innerHTML = lang === "de"
         ? "Eure Anwesenheit ist unser schönstes Geschenk. Wenn ihr uns dennoch etwas schenken möchtet, freuen wir uns über einen Beitrag zu unserer Hochzeitsreise, damit unser Gepäck leichter bleibt! 😊"
         : "Your presence is our greatest gift. If you would still like to give us something, we would appreciate a contribution to our honeymoon, so our luggage stays light! 😊";
-    
-    document.getElementById("location-title").innerText = lang === "de" ? "📍 Hochzeitslocation" : "📍 Wedding Location";
     
     document.getElementById("faq-title").innerText = lang === "de" ? "❓ FAQ" : "❓ FAQ";
     // Angepasste Reihenfolge: 0: FAQ3, 1: FAQ2, 2: FAQ1
