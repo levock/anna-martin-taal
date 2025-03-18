@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wedding of Anna Sophia & Martin</title>
+    <title>Anna & Martin's Wedding</title>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@600&family=Raleway:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -16,7 +16,7 @@
 </div>
 
 <div class="container">
-    <h1 class="wedding-title">Wedding of Anna Sophia & Martin</h1>
+    <h1 class="wedding-title">Anna & Martin</h1>
     <p class="wedding-subtitle">10. März 2026 · Nuuk Taal, Philippinen</p>
 
     <div id="password-section">
@@ -72,14 +72,47 @@
 </div>
 
 <script>
+function checkPassword() {
+    const password = document.getElementById("password-input").value.toLowerCase();
+    if (password === "taal2026") {
+        document.getElementById("password-section").style.display = "none";
+        document.getElementById("content").style.display = "block";
+    } else {
+        document.getElementById("error-message").innerText = "Falscher Code!";
+    }
+}
+
 let selectedLanguage = "de";
 
 function switchLanguage(lang) {
     selectedLanguage = lang;
-    document.getElementById("password-title").innerText = lang === "de" ? "Bitte gib den Code ein:" : "Please enter the code:";
-    document.querySelector("#password-section button").innerText = lang === "de" ? "Bestätigen" : "Confirm";
 
-    if (document.getElementById("content-de").style.display === "block" || document.getElementById("content-en").style.display === "block") {
+    if (lang === "de") {
+        document.getElementById("content-en").style.display = "none";
+        document.getElementById("content-de").style.display = "block";
+    } else {
+        document.getElementById("content-de").style.display = "none";
+        document.getElementById("content-en").style.display = "block";
+    }
+}
+
+
+let selectedLanguage = "de";
+
+function switchLanguage(lang) {
+    selectedLanguage = lang;
+
+    // Passwortseite übersetzen
+    document.getElementById("password-title").innerText = lang === "de" ? "Bitte gib den Code ein:" : "Please enter the code:";
+    document.getElementById("password-button").innerText = lang === "de" ? "Bestätigen" : "Confirm";
+
+    // Fehlernachricht zurücksetzen
+    if (document.getElementById("error-message")) {
+        document.getElementById("error-message").innerText = "";
+    }
+
+    // Inhaltssprache umschalten
+    if (document.getElementById("content-de") && document.getElementById("content-en")) {
         if (lang === "de") {
             document.getElementById("content-en").style.display = "none";
             document.getElementById("content-de").style.display = "block";
@@ -96,17 +129,28 @@ function checkPassword() {
         document.getElementById("password-section").style.display = "none";
         document.getElementById("language-switcher").style.display = "block";
 
-        if (selectedLanguage === "de") {
-            document.getElementById("content-de").style.display = "block";
-            document.getElementById("content-en").style.display = "none";
-        } else {
-            document.getElementById("content-en").style.display = "block";
-            document.getElementById("content-de").style.display = "none";
+        if (document.getElementById("content-de") && document.getElementById("content-en")) {
+            if (selectedLanguage === "de") {
+                document.getElementById("content-de").style.display = "block";
+                document.getElementById("content-en").style.display = "none";
+            } else {
+                document.getElementById("content-en").style.display = "block";
+                document.getElementById("content-de").style.display = "none";
+            }
         }
     } else {
         document.getElementById("error-message").innerText = selectedLanguage === "de" ? "Falscher Code!" : "Incorrect code!";
     }
 }
+
+// Standardmäßig beide Inhalte verstecken
+document.addEventListener("DOMContentLoaded", function() {
+    if (document.getElementById("content-de") && document.getElementById("content-en")) {
+        document.getElementById("content-de").style.display = "none";
+        document.getElementById("content-en").style.display = "none";
+    }
+});
+
 </script>
 
 </body>
