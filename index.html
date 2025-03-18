@@ -134,7 +134,7 @@ function switchLanguage(lang) {
 function checkPassword() {
     const password = document.getElementById("password-input").value.toLowerCase();
     const hashedPassword = CryptoJS.SHA256(password).toString();
-    const storedHashedPassword = "your_stored_hashed_password_here"; // Replace with the actual hashed password
+    const storedHashedPassword = "f84a6118265b6714e69a62e3ce760c8ae42c6712e3359dec67f6070b67ca562a; // Replace with the actual hashed password
 
     if (hashedPassword === storedHashedPassword) {
         document.getElementById("password-section").style.display = "none";
