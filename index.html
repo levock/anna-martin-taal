@@ -6,6 +6,23 @@
     <title>Wedding of Anna Sophia & Martin</title>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@600&family=Raleway:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <style>
+        .faq-question {
+            cursor: pointer;
+            padding: 10px;
+            border: 1px solid #ccc;
+            margin-top: 5px;
+            background-color: #f9f9f9;
+        }
+        .faq-answer {
+            display: none;
+            padding: 10px;
+            border-left: 1px solid #ccc;
+            border-right: 1px solid #ccc;
+            border-bottom: 1px solid #ccc;
+            background-color: #f1f1f1;
+        }
+    </style>
 </head>
 <body>
 
@@ -77,6 +94,20 @@
             <iframe src="https://www.google.com/maps?q=Nuuk+Taal+Batangas+Philippines&output=embed"
                     width="100%" height="300" style="border:0;" loading="lazy" allowfullscreen></iframe>
         </div>
+
+        <div class="card">
+            <h2 id="faq-title">❓ FAQ</h2>
+            <div class="faq-question" onclick="toggleFaq('faq1')">Wie heiß wird es?</div>
+            <div id="faq1" class="faq-answer">
+                <p id="faq1-answer-de">Tagsüber kann es durchaus weit über 30 Grad heiß werden. Denkt daher bitte daran, ausreichend Sonnencreme einzupacken und genug zu trinken. Die meisten Supermärkte, Hotels und andere Gebäude sind in der Regel jedoch klimatisiert.</p>
+                <p id="faq1-answer-en" style="display:none;">During the day it can get well over 30 degrees. So please remember to pack enough sunscreen and drink plenty of water. Most supermarkets, hotels, and other buildings are usually air-conditioned.</p>
+            </div>
+            <div class="faq-question" onclick="toggleFaq('faq2')">Benötige ich Impfungen?</div>
+            <div id="faq2" class="faq-answer">
+                <p id="faq2-answer-de">Ja, bitte informiert euch über die aktuellen STIKO-Empfehlungen für die Philippinen. El Nido und Manila zählen jedoch nicht zu den Malaria-Gebieten.</p>
+                <p id="faq2-answer-en" style="display:none;">Yes, please check the current STIKO recommendations for the Philippines. However, El Nido and Manila are not considered malaria areas.</p>
+            </div>
+        </div>
     </div>
 </div>
 
@@ -134,9 +165,27 @@ function switchLanguage(lang) {
 
     document.getElementById("location-title").innerText = lang === "de" ? "📍 Hochzeitslocation" : "📍 Wedding Location";
 
-    // Sprache für den Inhalt setzen
-    document.getElementById("content-de").style.display = lang === "de" ? "block" : "none";
-    document.getElementById("content-en").style.display = lang === "de" ? "none" : "block";
+    document.getElementById("faq-title").innerText = lang === "de" ? "❓ FAQ" : "❓ FAQ";
+    document.querySelectorAll('.faq-question').forEach((element, index) => {
+        if(index === 0) {
+            element.innerText = lang === "de" ? "Wie heiß wird es?" : "How hot will it be?";
+        } else if(index === 1) {
+            element.innerText = lang === "de" ? "Benötige ich Impfungen?" : "Do I need vaccinations?";
+        }
+    });
+    document.getElementById("faq1-answer-de").style.display = lang === "de" ? "block" : "none";
+    document.getElementById("faq1-answer-en").style.display = lang === "de" ? "none" : "block";
+    document.getElementById("faq2-answer-de").style.display = lang === "de" ? "block" : "none";
+    document.getElementById("faq2-answer-en").style.display = lang === "de" ? "none" : "block";
+}
+
+function toggleFaq(faqId) {
+    const faq = document.getElementById(faqId);
+    if (faq.style.display === "none") {
+        faq.style.display = "block";
+    } else {
+        faq.style.display = "none";
+    }
 }
 
 async function checkPassword() {
