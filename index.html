@@ -6,6 +6,7 @@
     <title>Wedding of Anna Sophia & Martin</title>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@600&family=Raleway:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
 </head>
 <body>
 
@@ -132,7 +133,10 @@ function switchLanguage(lang) {
 
 function checkPassword() {
     const password = document.getElementById("password-input").value.toLowerCase();
-    if (password === "taal2026") {
+    const hashedPassword = CryptoJS.SHA256(password).toString();
+    const storedHashedPassword = "your_stored_hashed_password_here"; // Replace with the actual hashed password
+
+    if (hashedPassword === storedHashedPassword) {
         document.getElementById("password-section").style.display = "none";
         document.getElementById("content").style.display = "block";
 
