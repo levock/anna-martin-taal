@@ -22,6 +22,13 @@
       border-bottom: 1px solid #ccc;
       background-color: #f1f1f1;
     }
+    .card {
+      padding: 20px;
+      margin: 20px 0;
+      border: 1px solid #ccc;
+      background-color: #fff;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
   </style>
 </head>
 <body>
@@ -43,8 +50,12 @@
   </div>
 
   <div id="content" style="display:none;">
-    <div class="intro-text" id="intro-text">
-      <!-- Der Einleitungstext wird per JavaScript gesetzt -->
+    <!-- Einleitungstext in einer Card -->
+    <div class="card">
+      <h2 id="intro-title">Willkommen auf unserer Hochzeitseite</h2>
+      <div class="intro-text" id="intro-text">
+        <!-- Der Einleitungstext wird per JavaScript gesetzt -->
+      </div>
     </div>
 
     <div class="card">
