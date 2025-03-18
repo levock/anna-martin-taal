@@ -1,7 +1,8 @@
 
 body { font-family: 'Raleway', sans-serif; background-color: #fdfbf2; color: #333; padding: 20px; }
 .container { max-width: 700px; margin: auto; padding: 30px; text-align: center; }
-.card { background-color: #fff; border-radius: 10px; padding: 15px; margin-bottom: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+.wedding-title { font-family: 'Dancing Script', cursive; font-size: 50px; color: #6B8061; text-align: center; margin-bottom: 10px; }
+.wedding-subtitle { font-family: 'Montserrat', sans-serif; font-size: 20px; color: #333; text-align: center; margin-bottom: 30px; }
+.schedule { text-align: center; font-size: 18px; line-height: 1.8; font-weight: 500; }
 button { font-size: 25px; background: none; border: none; cursor: pointer; }
-ul { text-align: left; display: inline-block; margin-top: 0; }
-@media (max-width: 600px) { .container { padding: 15px; } .card { padding: 10px; margin-bottom: 15px; } }
+@media (max-width: 600px) { .container { padding: 15px; } }

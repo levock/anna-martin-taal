@@ -10,8 +10,10 @@
 </head>
 <body>
 <div class="container">
+    <h1 class="wedding-title">Anna & Martin</h1>
+    <p class="wedding-subtitle">10. März 2026 · Nuuk Taal, Philippinen</p>
+
     <div id="language-selection">
-        <h1>🌸 Welcome! 🌸</h1>
         <p>Select your language:</p>
         <button onclick="selectLanguage('en')">🇬🇧</button>
         <button onclick="selectLanguage('de')">🇩🇪</button>
@@ -20,104 +22,63 @@
     <div id="password-section" style="display:none;">
         <h2 id="password-title">Please enter the code:</h2>
         <input type="password" id="password-input" placeholder="Enter code">
-        <button onclick="checkPassword()">Submit</button>
+        <button id="submit-button" onclick="checkPassword()">Submit</button>
         <p id="error-message" style="color:red;"></p>
     </div>
 
     <div id="content-en" style="display:none;">
-        <h1 class="cursive">Anna & Martin's Wedding</h1>
-        <p class="subtitle">March 10, 2026 · Nuuk Taal, Philippines</p>
-
-        <div class="card">
-            <h2>🌺 Travel Plan</h2>
-            <p>We're so happy you found your way to our wedding website! We want you to have a wonderful and unforgettable time in the Philippines. To simplify your journey, we will organize transportation from Manila to Nuuk Taal and back.</p>
-            <ul class="schedule">
-                <li>07.03: Arrival Manila</li>
-                <li>08.03: Explore Manila</li>
-                <li>09.03: Transfer Taal / Dinner Anna's Family</li>
-                <li><strong>10.03: Wedding Day!</strong></li>
-                <li>11.03: Transfer Manila</li>
-                <li>12.03: Flight El Nido</li>
-                <li>16.03: Return Manila</li>
-            </ul>
-        </div>
-
-        <div class="card">
-            <h2>💍 Wedding Day</h2>
-            <p><strong>Date:</strong> March 10, 2026</p>
-            <p><strong>Time:</strong> 4:00 PM</p>
-            <p><strong>Location:</strong> Nuuk Taal, Talisay, Batangas, Philippines</p>
-            <p><strong>Dress Code:</strong> Summer elegant, Barong Tagalog & light dresses welcome. Please avoid high heels, as the venue is outdoors on grass and stone paths.</p>
-            <p><strong>Dinner & Celebration:</strong> Immediately after the ceremony.</p>
-            <p>We’re excited to celebrate this special day with you!</p>
-        </div>
-
-        <div class="card">
-            <h2>🏝️ El Nido Trip</h2>
-            <p>After the wedding, we'd love to spend some days with you in El Nido, Palawan—one of the most beautiful places in the Philippines!</p>
-        </div>
-
-        <div class="card">
-            <h2>🎁 Gifts</h2>
-            <p>Your presence is our greatest gift. If you wish to give something, contributions to our honeymoon fund would be wonderful—this way our luggage stays lighter! 😊</p>
-        </div>
-
-        <div class="card">
-            <h2>📍 Wedding Location</h2>
-            <iframe width="100%" height="300" style="border:0;" loading="lazy" allowfullscreen
-                src="https://www.google.com/maps?q=Nuuk+Taal+Batangas+Philippines&output=embed">
-            </iframe>
-        </div>
+        <h2>🌺 Travel Plan</h2>
+        <p>We're so happy you found your way to our wedding website! We want you to have a wonderful and unforgettable time in the Philippines. To simplify your journey, we will organize transportation from Manila to Nuuk Taal and back.</p>
+        <p class="schedule">
+            <strong>07.03:</strong> Arrival Manila<br>
+            <strong>08.03:</strong> Explore Manila<br>
+            <strong>09.03:</strong> Transfer Taal<br>
+            <strong>10.03:</strong> Wedding Day!<br>
+            <strong>11.03:</strong> Transfer Manila<br>
+            <strong>12.03:</strong> Flight El Nido<br>
+            <strong>16.03:</strong> Return Manila
+        </p>
     </div>
 
     <div id="content-de" style="display:none;">
-        <h1 class="cursive">Anna & Martins Hochzeit</h1>
-        <p class="subtitle">10. März 2026 · Nuuk Taal, Philippinen</p>
-
-        <div class="card">
-            <h2>🌺 Reiseplan</h2>
-            <p>Schön, dass du den Weg zu unserer Hochzeitsseite gefunden hast! Wir möchten, dass du eine schöne und unvergessliche Zeit auf den Philippinen verbringst.
-            Als Deutsche können die Philippinen manchmal etwas überwältigend wirken – besonders bei der Ankunft in Manila.
-            Um deine Anreise einfacher zu machen, organisieren wir den Transfer von Manila zur Hochzeitslocation Nuuk Taal und zurück.
-            Hier findest du unseren Reiseplan, der dir als Orientierung dienen soll.</p>
-            <ul>
-                <li>07.03: Ankunft Manila</li>
-                <li>08.03: Manila entdecken</li>
-                <li>09.03: Transfer Taal / Abendessen Annas Familie</li>
-                <li><strong>10.03: Hochzeitstag!</strong></li>
-                <li>11.03: Transfer Manila</li>
-                <li>12.03: Flug El Nido</li>
-                <li>16.03: Rückflug Manila</li>
-            </ul>
-        </div>
-
-        <div class="card">
-            <h2>💍 Hochzeitstag</h2>
-            <p><strong>Datum:</strong> 10. März 2026</p>
-            <p><strong>Uhrzeit:</strong> 16:00 Uhr</p>
-            <p><strong>Ort:</strong> Nuuk Taal, Talisay, Batangas, Philippinen</p>
-            <p><strong>Dresscode:</strong> Sommerlich elegant, gerne Barong Tagalog und luftige Kleider. Bitte verzichtet auf hohe Schuhe, da die Feier im Freien stattfindet.</p>
-            <p><strong>Abendessen & Feier:</strong> Direkt im Anschluss an die Trauung.</p>
-            <p>Wir freuen uns riesig, diesen besonderen Tag mit euch zu feiern!</p>
-        </div>
-
-        <div class="card">
-            <h2>🏝️ El Nido Reise</h2>
-            <p>Nach der Hochzeit würden wir gerne ein paar Tage mit euch auf Palawan verbringen. Wir planen eine Reise nach El Nido – etwa eine Flugstunde von Manila entfernt – das zu den schönsten Orten der Philippinen zählt. Wir freuen uns, wenn ihr dabei seid!</p>
-        </div>
-
-        <div class="card">
-            <h2>🎁 Geschenke</h2>
-            <p>Eure Anwesenheit ist unser schönstes Geschenk. Wenn ihr uns dennoch etwas schenken möchtet, freuen wir uns über einen Beitrag zu unserer Hochzeitsreise, damit unser Gepäck leichter bleibt! 😊</p>
-        </div>
-
-        <div class="card">
-            <h2>📍 Hochzeitslocation</h2>
-            <iframe src="https://www.google.com/maps?q=Nuuk+Taal+Batangas+Philippines&output=embed"
-                width="100%" height="300" style="border:0;" loading="lazy" allowfullscreen></iframe>
-        </div>
+        <h2>🌺 Reiseplan</h2>
+        <p>Schön, dass du den Weg zu unserer Hochzeitsseite gefunden hast! Wir möchten, dass du eine schöne und unvergessliche Zeit auf den Philippinen verbringst. Als Deutsche können die Philippinen manchmal etwas überwältigend wirken – besonders bei der Ankunft in Manila. Um deine Anreise einfacher zu machen, organisieren wir den Transfer von Manila zur Hochzeitslocation Nuuk Taal und zurück. Hier findest du unseren Reiseplan, der dir als Orientierung dienen soll.</p>
+        <p class="schedule">
+            <strong>07.03:</strong> Ankunft Manila<br>
+            <strong>08.03:</strong> Manila entdecken<br>
+            <strong>09.03:</strong> Transfer Taal<br>
+            <strong>10.03:</strong> Hochzeitstag!<br>
+            <strong>11.03:</strong> Transfer Manila<br>
+            <strong>12.03:</strong> Flug El Nido<br>
+            <strong>16.03:</strong> Rückflug Manila
+        </p>
     </div>
 </div>
-<script src="script.js"></script>
+
+<script>
+let selectedLanguage = 'en';
+
+function selectLanguage(lang) {
+    selectedLanguage = lang;
+    document.getElementById('language-selection').style.display = 'none';
+    document.getElementById('password-section').style.display = 'block';
+
+    document.getElementById('password-title').innerText = lang === 'de' ? 'Bitte gib den Code ein:' : 'Please enter the code:';
+    document.getElementById('submit-button').innerText = lang === 'de' ? 'Bestätigen' : 'Submit';
+}
+
+function checkPassword() {
+    const password = document.getElementById('password-input').value.toLowerCase();
+    const errorMsg = document.getElementById('error-message');
+
+    if (password === 'taal2026') {
+        document.getElementById('password-section').style.display = 'none';
+        document.getElementById('content-' + selectedLanguage).style.display = 'block';
+    } else {
+        errorMsg.innerText = selectedLanguage === 'de' ? 'Falscher Code!' : 'Incorrect code!';
+    }
+}
+</script>
+
 </body>
 </html>
