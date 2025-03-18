@@ -13,11 +13,18 @@
     <h1 class="wedding-title">Anna & Martin</h1>
     <p class="wedding-subtitle">10. März 2026 · Nuuk Taal, Philippinen</p>
 
-    <div class="intro-text">
-        <p><strong>Schön, dass du den Weg zu unserer Hochzeitsseite gefunden hast!</strong> Wir möchten, dass du eine schöne und unvergessliche Zeit auf den Philippinen verbringst. Als Deutsche können die Philippinen manchmal etwas überwältigend wirken – besonders bei der Ankunft in Manila. Um deine Anreise einfacher zu machen, organisieren wir den Transfer von Manila zur Hochzeitslocation Nuuk Taal und zurück.</p>
+    <div id="password-section">
+        <h2 id="password-title">Bitte gib den Code ein:</h2>
+        <input type="password" id="password-input" placeholder="Enter code">
+        <button onclick="checkPassword()">Bestätigen</button>
+        <p id="error-message" style="color:red;"></p>
     </div>
 
-    <div id="content-de">
+    <div id="content" style="display:none;">
+        <div class="intro-text">
+            <p><strong>Schön, dass du den Weg zu unserer Hochzeitsseite gefunden hast!</strong> Wir möchten, dass du eine schöne und unvergessliche Zeit auf den Philippinen verbringst. Als Deutsche können die Philippinen manchmal etwas überwältigend wirken – besonders bei der Ankunft in Manila. Um deine Anreise einfacher zu machen, organisieren wir den Transfer von Manila zur Hochzeitslocation Nuuk Taal und zurück.</p>
+        </div>
+
         <div class="card">
             <h2>🌺 Reiseplan</h2>
             <p class="schedule">
@@ -57,5 +64,18 @@
         </div>
     </div>
 </div>
+
+<script>
+function checkPassword() {
+    const password = document.getElementById("password-input").value.toLowerCase();
+    if (password === "taal2026") {
+        document.getElementById("password-section").style.display = "none";
+        document.getElementById("content").style.display = "block";
+    } else {
+        document.getElementById("error-message").innerText = "Falscher Code!";
+    }
+}
+</script>
+
 </body>
 </html>

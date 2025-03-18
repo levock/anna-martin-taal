@@ -4,5 +4,8 @@ body { font-family: 'Raleway', sans-serif; background-color: #fdfbf2; color: #33
 .wedding-title { font-family: 'Dancing Script', cursive; font-size: 50px; color: #6B8061; text-align: center; margin-bottom: 10px; }
 .wedding-subtitle { font-family: 'Montserrat', sans-serif; font-size: 20px; color: #333; text-align: center; margin-bottom: 30px; }
 .intro-text { font-size: 18px; text-align: center; margin-bottom: 20px; padding: 0 20px; font-weight: 500; }
-.card { background-color: #fff; border-radius: 10px; padding: 15px; margin-bottom: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+.card { background-color: #fff; border-radius: 10px; padding: 15px; margin-bottom: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); max-width: 650px; margin-left: auto; margin-right: auto; }
 .schedule { text-align: center; font-size: 18px; line-height: 1.8; font-weight: 500; }
+#password-section { max-width: 400px; margin: auto; text-align: center; padding: 20px; background: #fff; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+input { width: 80%; padding: 8px; margin-top: 10px; }
+button { background: #6B8061; color: white; padding: 10px 20px; border: none; border-radius: 5px; margin-top: 10px; cursor: pointer; }
