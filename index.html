@@ -92,6 +92,69 @@ function switchLanguage(lang) {
     }
 }
 
+
+function switchLanguage(lang) {
+    selectedLanguage = lang;
+    if (lang === "de") {
+        document.getElementById("content-en").style.display = "none";
+        document.getElementById("content-de").style.display = "block";
+        document.getElementById("password-title").innerText = "Bitte gib den Code ein:";
+        document.querySelector("#password-section button").innerText = "Bestätigen";
+    } else {
+        document.getElementById("content-de").style.display = "none";
+        document.getElementById("content-en").style.display = "block";
+        document.getElementById("password-title").innerText = "Please enter the code:";
+        document.querySelector("#password-section button").innerText = "Confirm";
+    }
+}
+
+function checkPassword() {
+    const password = document.getElementById("password-input").value.toLowerCase();
+    if (password === "taal2026") {
+        document.getElementById("password-section").style.display = "none";
+        if (selectedLanguage === "de") {
+            document.getElementById("content-de").style.display = "block";
+        } else {
+            document.getElementById("content-en").style.display = "block";
+        }
+    } else {
+        document.getElementById("error-message").innerText = selectedLanguage === "de" ? "Falscher Code!" : "Incorrect code!";
+    }
+}
+
+
+function switchLanguage(lang) {
+    selectedLanguage = lang;
+    document.getElementById("password-title").innerText = lang === "de" ? "Bitte gib den Code ein:" : "Please enter the code:";
+    document.querySelector("#password-section button").innerText = lang === "de" ? "Bestätigen" : "Confirm";
+    
+    if (document.getElementById("content-de").style.display === "block" || document.getElementById("content-en").style.display === "block") {
+        if (lang === "de") {
+            document.getElementById("content-en").style.display = "none";
+            document.getElementById("content-de").style.display = "block";
+        } else {
+            document.getElementById("content-de").style.display = "none";
+            document.getElementById("content-en").style.display = "block";
+        }
+    }
+}
+
+function checkPassword() {
+    const password = document.getElementById("password-input").value.toLowerCase();
+    if (password === "taal2026") {
+        document.getElementById("password-section").style.display = "none";
+        document.getElementById("language-switcher").style.display = "block";
+        
+        if (selectedLanguage === "de") {
+            document.getElementById("content-de").style.display = "block";
+        } else {
+            document.getElementById("content-en").style.display = "block";
+        }
+    } else {
+        document.getElementById("error-message").innerText = selectedLanguage === "de" ? "Falscher Code!" : "Incorrect code!";
+    }
+}
+
 </script>
 
 </body>
