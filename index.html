@@ -13,103 +13,56 @@
     <h1 class="wedding-title">Anna & Martin</h1>
     <p class="wedding-subtitle">10. März 2026 · Nuuk Taal, Philippinen</p>
 
+    <div class="intro-text">
+        <p>Schön, dass du den Weg zu unserer Hochzeitsseite gefunden hast! Wir möchten, dass du eine schöne und unvergessliche Zeit auf den Philippinen verbringst. Als Deutsche können die Philippinen manchmal etwas überwältigend wirken – besonders bei der Ankunft in Manila. Um deine Anreise einfacher zu machen, organisieren wir den Transfer von Manila zur Hochzeitslocation Nuuk Taal und zurück.</p>
+    </div>
+
     <div id="language-selection">
         <p>Select your language:</p>
         <button onclick="selectLanguage('en')">🇬🇧</button>
         <button onclick="selectLanguage('de')">🇩🇪</button>
     </div>
 
-    <div id="password-section" style="display:none;">
-        <h2 id="password-title">Please enter the code:</h2>
-        <input type="password" id="password-input" placeholder="Enter code">
-        <button id="submit-button" onclick="checkPassword()">Submit</button>
-        <p id="error-message" style="color:red;"></p>
-    </div>
-
     <div id="content-en" style="display:none;">
         <div class="card">
             <h2>🌺 Travel Plan</h2>
-            <p>We're so happy you found your way to our wedding website! We want you to have a wonderful and unforgettable time in the Philippines. To simplify your journey, we will organize transportation from Manila to Nuuk Taal and back.</p>
             <p class="schedule">
                 07.03: Arrival Manila<br>
                 08.03: Explore Manila<br>
                 09.03: Transfer Taal<br>
-                <span class="wedding-day">10.03: Wedding Day!</span><br>
+                <strong>10.03: Wedding Day!</strong><br>
                 11.03: Transfer Manila<br>
                 12.03: Flight El Nido<br>
                 16.03: Return Manila
             </p>
-        </div>
-
-        <div class="card">
-            <h2>💍 Wedding Day</h2>
-            <p><strong>Date:</strong> March 10, 2026</p>
-            <p><strong>Time:</strong> 4:00 PM</p>
-            <p><strong>Location:</strong> Nuuk Taal, Talisay, Batangas, Philippines</p>
-            <p><strong>Dress Code:</strong> Summer elegant, Barong Tagalog & light dresses welcome. Please avoid high heels, as the venue is outdoors on grass and stone paths.</p>
-            <p><strong>Dinner & Celebration:</strong> Immediately after the ceremony.</p>
-        </div>
-
-        <div class="card">
-            <h2>🏝️ El Nido Trip</h2>
-            <p>After the wedding, we'd love to spend some days with you in El Nido, Palawan—one of the most beautiful places in the Philippines!</p>
-        </div>
-
-        <div class="card">
-            <h2>🎁 Gifts</h2>
-            <p>Your presence is our greatest gift. If you wish to give something, contributions to our honeymoon fund would be wonderful—this way our luggage stays lighter! 😊</p>
-        </div>
-
-        <div class="card">
-            <h2>📍 Wedding Location</h2>
-            <iframe width="100%" height="300" style="border:0;" loading="lazy" allowfullscreen
-                src="https://www.google.com/maps?q=Nuuk+Taal+Batangas+Philippines&output=embed">
-            </iframe>
         </div>
     </div>
 
     <div id="content-de" style="display:none;">
         <div class="card">
             <h2>🌺 Reiseplan</h2>
-            <p>Schön, dass du den Weg zu unserer Hochzeitsseite gefunden hast! Wir möchten, dass du eine schöne und unvergessliche Zeit auf den Philippinen verbringst. Als Deutsche können die Philippinen manchmal etwas überwältigend wirken – besonders bei der Ankunft in Manila. Um deine Anreise einfacher zu machen, organisieren wir den Transfer von Manila zur Hochzeitslocation Nuuk Taal und zurück. Hier findest du unseren Reiseplan, der dir als Orientierung dienen soll.</p>
             <p class="schedule">
                 07.03: Ankunft Manila<br>
                 08.03: Manila entdecken<br>
                 09.03: Transfer Taal<br>
-                <span class="wedding-day">10.03: Hochzeitstag!</span><br>
+                <strong>10.03: Hochzeitstag</strong><br>
                 11.03: Transfer Manila<br>
                 12.03: Flug El Nido<br>
                 16.03: Rückflug Manila
             </p>
         </div>
-
-        <div class="card">
-            <h2>💍 Hochzeitstag</h2>
-            <p><strong>Datum:</strong> 10. März 2026</p>
-            <p><strong>Uhrzeit:</strong> 16:00 Uhr</p>
-            <p><strong>Ort:</strong> Nuuk Taal, Talisay, Batangas, Philippinen</p>
-            <p><strong>Dresscode:</strong> Sommerlich elegant, gerne Barong Tagalog und luftige Kleider. Bitte verzichtet auf hohe Schuhe, da die Feier im Freien stattfindet.</p>
-            <p><strong>Abendessen & Feier:</strong> Direkt im Anschluss an die Trauung.</p>
-        </div>
-
-        <div class="card">
-            <h2>🏝️ El Nido Reise</h2>
-            <p>Nach der Hochzeit würden wir gerne ein paar Tage mit euch auf Palawan verbringen. Wir planen eine Reise nach El Nido – etwa eine Flugstunde von Manila entfernt – das zu den schönsten Orten der Philippinen zählt.</p>
-        </div>
-
-        <div class="card">
-            <h2>🎁 Geschenke</h2>
-            <p>Eure Anwesenheit ist unser schönstes Geschenk. Wenn ihr uns dennoch etwas schenken möchtet, freuen wir uns über einen Beitrag zu unserer Hochzeitsreise, damit unser Gepäck leichter bleibt! 😊</p>
-        </div>
-
-        <div class="card">
-            <h2>📍 Hochzeitslocation</h2>
-            <iframe src="https://www.google.com/maps?q=Nuuk+Taal+Batangas+Philippines&output=embed"
-                width="100%" height="300" style="border:0;" loading="lazy" allowfullscreen></iframe>
-        </div>
     </div>
 </div>
 
-<script src="script.js"></script>
+<script>
+let selectedLanguage = 'en';
+
+function selectLanguage(lang) {
+    selectedLanguage = lang;
+    document.getElementById('language-selection').style.display = 'none';
+    document.getElementById('content-' + selectedLanguage).style.display = 'block';
+}
+</script>
+
 </body>
 </html>
