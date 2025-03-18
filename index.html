@@ -13,7 +13,13 @@
     <h1 class="wedding-title">Anna & Martin</h1>
     <p class="wedding-subtitle">10. März 2026 · Nuuk Taal, Philippinen</p>
 
-    <div id="password-section">
+    <div id="language-selection">
+        <h2>🌍 Bitte wähle deine Sprache:</h2>
+        <button onclick="selectLanguage('en')">🇬🇧</button>
+        <button onclick="selectLanguage('de')">🇩🇪</button>
+    </div>
+
+    <div id="password-section" style="display:none;">
         <h2 id="password-title">Bitte gib den Code ein:</h2>
         <input type="password" id="password-input" placeholder="Enter code">
         <button onclick="checkPassword()">Bestätigen</button>
@@ -66,13 +72,22 @@
 </div>
 
 <script>
+let selectedLanguage = 'de';
+
+function selectLanguage(lang) {
+    selectedLanguage = lang;
+    document.getElementById("language-selection").style.display = "none";
+    document.getElementById("password-section").style.display = "block";
+    document.getElementById("password-title").innerText = lang === "de" ? "Bitte gib den Code ein:" : "Please enter the code:";
+}
+
 function checkPassword() {
     const password = document.getElementById("password-input").value.toLowerCase();
     if (password === "taal2026") {
         document.getElementById("password-section").style.display = "none";
         document.getElementById("content").style.display = "block";
     } else {
-        document.getElementById("error-message").innerText = "Falscher Code!";
+        document.getElementById("error-message").innerText = selectedLanguage === "de" ? "Falscher Code!" : "Incorrect code!";
     }
 }
 </script>
