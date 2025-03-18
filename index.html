@@ -9,88 +9,93 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
+<div class="container">
+    <div id="language-selection">
+        <h1>🌸 Welcome! 🌸</h1>
+        <p>Select your language:</p>
+        <button onclick="selectLanguage('en')">🇬🇧</button>
+        <button onclick="selectLanguage('de')">🇩🇪</button>
+    </div>
 
-        <div id="language-selection">
-            <h1>🌸 Welcome! 🌸</h1>
-            <p>Select your language</p>
-            <button onclick="selectLanguage('en')">🇬🇧</button>
-            <button onclick="selectLanguage('de')">🇩🇪</button>
+    <div id="password-section" style="display:none;">
+        <h2 id="password-title">Please enter the code:</h2>
+        <input type="password" id="password-input" placeholder="Enter code">
+        <button onclick="checkPassword()">Submit</button>
+        <p id="error-message" style="color:red;"></p>
+    </div>
+
+    <div id="content-en" style="display:none;">
+        <h1 class="cursive">Anna & Martin's Wedding</h1>
+        <p class="subtitle">March 10, 2026 · Nuuk Taal, Philippines</p>
+
+        <div class="card">
+            <h2>🌺 Travel Plan</h2>
+            <p>We're so happy you found your way to our wedding website! We want you to have a wonderful and unforgettable time in the Philippines. To simplify your journey, we will organize transportation from Manila to Nuuk Taal and back.</p>
+            <ul class="schedule">
+                <li>07.03: Arrival Manila</li>
+                <li>08.03: Explore Manila</li>
+                <li>09.03: Transfer Taal / Dinner Anna's Family</li>
+                <li><strong>10.03: Wedding Day!</strong></li>
+                <li>11.03: Transfer Manila</li>
+                <li>12.03: Flight El Nido</li>
+                <li>16.03: Return Manila</li>
+            </ul>
         </div>
 
-        <div id="password-section" style="display:none;">
-            <h2 id="password-title">Please enter the code:</h2>
-            <input type="password" id="password-input" placeholder="Enter code">
-            <button onclick="checkPassword()">Submit</button>
-            <p id="error-message" style="color:red;"></p>
+        <div class="card">
+            <h2>🏝️ El Nido Trip</h2>
+            <p>After the wedding, we'd love to spend some days with you in El Nido, Palawan—one of the most beautiful places in the Philippines!</p>
         </div>
 
-        <div id="content-en" class="content" style="display:none;">
-            <h1 class="cursive">Anna & Martin's Wedding</h1>
-            <p class="subtitle">March 10, 2026 · Nuuk Taal, Philippines</p>
-
-            <div class="card">
-                <h2>🌺 Travel Plan</h2>
-                <ul>
-                    <li>07.03: Arrival Manila</li>
-                    <li>08.03: Explore Manila</li>
-                    <li>09.03: Transfer Taal / Dinner Anna's Family</li>
-                    <li><strong>10.03: Wedding Day!</strong></li>
-                    <li>11.03: Transfer Manila</li>
-                    <li>12.03: Flight El Nido</li>
-                    <li>16.03: Return Manila</li>
-                </ul>
-            </div>
-
-            <div class="card">
-                <h2>🏝️ El Nido Trip</h2>
-                <p>Join us for island hopping on beautiful Palawan!</p>
-            </div>
-
-            <div class="card">
-                <h2>🎁 Gifts</h2>
-                <p>Your presence is our greatest gift.</p>
-            </div>
-
-            <div class="card">
-                <h2>📍 Wedding Location</h2>
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7721.515539153593!2d121.00337927598965!3d14.082695276410109!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33bd7d8f07dc0b1f%3A0xa0232737ae60ab6c!2sNuuk%20Taal!5e0!3m2!1sen!2sde!4v1710746411234!5m2!1sen!2sde" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-            </div>
+        <div class="card">
+            <h2>🎁 Gifts</h2>
+            <p>Your presence is our greatest gift. If you wish to give something, contributions to our honeymoon fund would be wonderful—this way our luggage stays lighter! 😊</p>
         </div>
 
-        <div id="content-de" class="content" style="display:none;">
-            <h1 class="cursive">Anna & Martins Hochzeit</h1>
-            <p class="subtitle">10. März 2026 · Nuuk Taal, Philippinen</p>
-
-            <div class="card">
-                <h2>🌺 Reiseplan</h2>
-                <ul>
-                    <li>07.03: Ankunft Manila</li>
-                    <li>08.03: Manila entdecken</li>
-                    <li>09.03: Transfer Taal / Abendessen Annas Familie</li>
-                    <li><strong>10.03: Hochzeitstag!</strong></li>
-                    <li>11.03: Transfer Manila</li>
-                    <li>12.03: Flug El Nido</li>
-                    <li>16.03: Rückflug Manila</li>
-                </ul>
-            </div>
-
-            <div class="card">
-                <h2>🏝️ El Nido Reise</h2>
-                <p>Kommt mit zum Inselhopping auf dem wunderschönen Palawan!</p>
-            </div>
-
-            <div class="card">
-                <h2>🎁 Geschenke</h2>
-                <p>Eure Anwesenheit ist unser schönstes Geschenk.</p>
-            </div>
-
-            <div class="card">
-                <h2>📍 Hochzeitslocation</h2>
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7721.515539153593!2d121.00337927598965!3d14.082695276410109!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33bd77e25d94f3a1%3A0x1e437fed5f42b5fd!2sNuuk+Taal!5e0!3m2!1sde!2sde!4v1710746402146!5m2!1sde!2sde" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-            </div>
+        <div class="card">
+            <h2>📍 Wedding Location</h2>
+            <iframe width="100%" height="300" style="border:0;" loading="lazy" allowfullscreen
+                src="https://www.google.com/maps?q=Nuuk+Taal+Batangas+Philippines&output=embed">
+            </iframe>
         </div>
     </div>
-    <script src="script.js"></script>
+
+    <div id="content-de" style="display:none;">
+        <h1 class="cursive">Anna & Martins Hochzeit</h1>
+        <p class="subtitle">10. März 2026 · Nuuk Taal, Philippinen</p>
+
+        <div class="card">
+            <h2>🌺 Reiseplan</h2>
+            <p>Schön, dass du den Weg zu unserer Hochzeitsseite gefunden hast! Wir möchten, dass du eine schöne und unvergessliche Zeit auf den Philippinen verbringst.
+            Um deine Anreise einfacher zu machen, organisieren wir den Transfer von Manila nach Nuuk Taal und zurück.</p>
+            <ul>
+                <li>07.03: Ankunft Manila</li>
+                <li>08.03: Manila entdecken</li>
+                <li>09.03: Transfer Taal / Abendessen Annas Familie</li>
+                <li><strong>10.03: Hochzeitstag!</strong></li>
+                <li>11.03: Transfer Manila</li>
+                <li>12.03: Flug El Nido</li>
+                <li>16.03: Rückflug Manila</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>🏝️ El Nido Reise</h2>
+            <p>Nach der Hochzeit würden wir gerne ein paar Tage mit euch auf Palawan verbringen. El Nido ist einer der schönsten Orte auf den Philippinen – ideal für Island Hopping!</p>
+        </div>
+
+        <div class="card">
+            <h2>🎁 Geschenke</h2>
+            <p>Eure Anwesenheit ist unser schönstes Geschenk. Wenn ihr uns dennoch etwas schenken möchtet, freuen wir uns über einen Beitrag zu unserer Hochzeitsreise, damit unser Gepäck leichter bleibt! 😊</p>
+        </div>
+
+        <div class="card">
+            <h2>📍 Hochzeitslocation</h2>
+            <iframe src="https://www.google.com/maps?q=Nuuk+Taal+Batangas+Philippines&output=embed"
+                width="100%" height="300" style="border:0;" loading="lazy" allowfullscreen></iframe>
+        </div>
+    </div>
+</div>
+<script src="script.js"></script>
 </body>
 </html>
