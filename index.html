@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anna & Martin's Wedding</title>
+    <title>Wedding of Anna Sophia & Martin</title>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@600&family=Raleway:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -16,23 +16,23 @@
 </div>
 
 <div class="container">
-    <h1 class="wedding-title">Anna & Martin</h1>
-    <p class="wedding-subtitle">10. März 2026 · Nuuk Taal, Philippinen</p>
+    <h1 id="title" class="wedding-title">Wedding of Anna Sophia & Martin</h1>
+    <p id="subtitle" class="wedding-subtitle">10. März 2026 · Nuuk Taal, Philippinen</p>
 
     <div id="password-section">
         <h2 id="password-title">Bitte gib den Code ein:</h2>
         <input type="password" id="password-input" placeholder="Enter code">
-        <button onclick="checkPassword()">Bestätigen</button>
+        <button id="password-button" onclick="checkPassword()">Bestätigen</button>
         <p id="error-message" style="color:red;"></p>
     </div>
 
     <div id="content" style="display:none;">
-        <div class="intro-text">
+        <div class="intro-text" id="intro-text">
             <p><strong>Schön, dass du den Weg zu unserer Hochzeitsseite gefunden hast!</strong> Wir möchten, dass du eine schöne und unvergessliche Zeit auf den Philippinen verbringst. Als Deutsche können die Philippinen manchmal etwas überwältigend wirken – besonders bei der Ankunft in Manila. Um deine Anreise einfacher zu machen, organisieren wir den Transfer von Manila zur Hochzeitslocation Nuuk Taal und zurück.</p>
         </div>
 
         <div class="card">
-            <h2>🌺 Reiseplan</h2>
+            <h2 id="schedule-title">🌺 Reiseplan</h2>
             <p class="schedule">
                 07.03: Ankunft Manila<br>
                 08.03: Manila entdecken<br>
@@ -45,7 +45,7 @@
         </div>
 
         <div class="card">
-            <h2>💍 Hochzeitstag</h2>
+            <h2 id="wedding-title">💍 Hochzeitstag</h2>
             <p><strong>Datum:</strong> 10. März 2026</p>
             <p><strong>Uhrzeit:</strong> 16:00 Uhr</p>
             <p><strong>Ort:</strong> Nuuk Taal, Talisay, Batangas, Philippinen</p>
@@ -54,17 +54,12 @@
         </div>
 
         <div class="card">
-            <h2>🏝️ El Nido Reise</h2>
-            <p>Nach der Hochzeit würden wir gerne ein paar Tage mit euch auf Palawan verbringen. Wir planen eine Reise nach El Nido – etwa eine Flugstunde von Manila entfernt – das zu den schönsten Orten der Philippinen zählt.</p>
-        </div>
-
-        <div class="card">
-            <h2>🎁 Geschenke</h2>
+            <h2 id="gifts-title">🎁 Geschenke</h2>
             <p>Eure Anwesenheit ist unser schönstes Geschenk. Wenn ihr uns dennoch etwas schenken möchtet, freuen wir uns über einen Beitrag zu unserer Hochzeitsreise, damit unser Gepäck leichter bleibt! 😊</p>
         </div>
 
         <div class="card">
-            <h2>📍 Hochzeitslocation</h2>
+            <h2 id="location-title">📍 Hochzeitslocation</h2>
             <iframe src="https://www.google.com/maps?q=Nuuk+Taal+Batangas+Philippines&output=embed"
                 width="100%" height="300" style="border:0;" loading="lazy" allowfullscreen></iframe>
         </div>
@@ -72,31 +67,6 @@
 </div>
 
 <script>
-function checkPassword() {
-    const password = document.getElementById("password-input").value.toLowerCase();
-    if (password === "taal2026") {
-        document.getElementById("password-section").style.display = "none";
-        document.getElementById("content").style.display = "block";
-    } else {
-        document.getElementById("error-message").innerText = "Falscher Code!";
-    }
-}
-
-let selectedLanguage = "de";
-
-function switchLanguage(lang) {
-    selectedLanguage = lang;
-
-    if (lang === "de") {
-        document.getElementById("content-en").style.display = "none";
-        document.getElementById("content-de").style.display = "block";
-    } else {
-        document.getElementById("content-de").style.display = "none";
-        document.getElementById("content-en").style.display = "block";
-    }
-}
-
-
 let selectedLanguage = "de";
 
 function switchLanguage(lang) {
@@ -107,50 +77,42 @@ function switchLanguage(lang) {
     document.getElementById("password-button").innerText = lang === "de" ? "Bestätigen" : "Confirm";
 
     // Fehlernachricht zurücksetzen
-    if (document.getElementById("error-message")) {
-        document.getElementById("error-message").innerText = "";
-    }
+    document.getElementById("error-message").innerText = "";
 
-    // Inhaltssprache umschalten
-    if (document.getElementById("content-de") && document.getElementById("content-en")) {
-        if (lang === "de") {
-            document.getElementById("content-en").style.display = "none";
-            document.getElementById("content-de").style.display = "block";
-        } else {
-            document.getElementById("content-de").style.display = "none";
-            document.getElementById("content-en").style.display = "block";
-        }
-    }
+    // Texte in den Hauptinhalten ändern
+    document.getElementById("title").innerText = lang === "de" ? "Wedding of Anna Sophia & Martin" : "Wedding of Anna Sophia & Martin";
+    document.getElementById("subtitle").innerText = lang === "de" ? "10. März 2026 · Nuuk Taal, Philippinen" : "March 10, 2026 · Nuuk Taal, Philippines";
+    document.getElementById("intro-text").innerHTML = lang === "de"
+        ? "<strong>Schön, dass du den Weg zu unserer Hochzeitsseite gefunden hast!</strong> Wir möchten, dass du eine schöne und unvergessliche Zeit auf den Philippinen verbringst."
+        : "<strong>Welcome to our wedding website!</strong> We want you to have a wonderful and unforgettable time in the Philippines.";
+    
+    document.getElementById("schedule-title").innerText = lang === "de" ? "🌺 Reiseplan" : "🌺 Travel Plan";
+    document.getElementById("wedding-title").innerText = lang === "de" ? "💍 Hochzeitstag" : "💍 Wedding Day";
+    document.getElementById("gifts-title").innerText = lang === "de" ? "🎁 Geschenke" : "🎁 Gifts";
+    document.getElementById("location-title").innerText = lang === "de" ? "📍 Hochzeitslocation" : "📍 Wedding Location";
+
+    // Sprache für den Inhalt setzen
+    document.getElementById("content-de").style.display = lang === "de" ? "block" : "none";
+    document.getElementById("content-en").style.display = lang === "de" ? "none" : "block";
 }
 
 function checkPassword() {
     const password = document.getElementById("password-input").value.toLowerCase();
     if (password === "taal2026") {
         document.getElementById("password-section").style.display = "none";
-        document.getElementById("language-switcher").style.display = "block";
+        document.getElementById("content").style.display = "block";
 
-        if (document.getElementById("content-de") && document.getElementById("content-en")) {
-            if (selectedLanguage === "de") {
-                document.getElementById("content-de").style.display = "block";
-                document.getElementById("content-en").style.display = "none";
-            } else {
-                document.getElementById("content-en").style.display = "block";
-                document.getElementById("content-de").style.display = "none";
-            }
-        }
+        // Sprache nach der Passworteingabe setzen
+        switchLanguage(selectedLanguage);
     } else {
         document.getElementById("error-message").innerText = selectedLanguage === "de" ? "Falscher Code!" : "Incorrect code!";
     }
 }
 
-// Standardmäßig beide Inhalte verstecken
+// Standardmäßig Inhalte verstecken
 document.addEventListener("DOMContentLoaded", function() {
-    if (document.getElementById("content-de") && document.getElementById("content-en")) {
-        document.getElementById("content-de").style.display = "none";
-        document.getElementById("content-en").style.display = "none";
-    }
+    document.getElementById("content").style.display = "none";
 });
-
 </script>
 
 </body>
