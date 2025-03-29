@@ -29,23 +29,26 @@
       background-color: #fff;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
-    .last-updated-box {
+  .last-updated-box {
   position: fixed;
-  top: 12px;
-  left: 12px;
-  background: rgba(255, 255, 255, 0.8);
-  color: #333;
-  font-size: 13px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  padding: 6px 10px;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  top: 6px;
+  left: 10px;
+  background: rgba(255, 255, 255, 0.7);
+  color: #444;
+  font-size: 11px;
+  font-family: sans-serif;
+  padding: 3px 8px;
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
   z-index: 1000;
   display: flex;
   align-items: center;
-  gap: 6px;
-  backdrop-filter: blur(3px);
+  gap: 4px;
+  backdrop-filter: blur(2px);
+  pointer-events: none; /* macht es unanklickbar */
+  user-select: none; /* verhindert Markieren */
 }
+
 
 .last-updated-box .icon {
   font-size: 14px;
