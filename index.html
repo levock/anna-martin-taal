@@ -181,11 +181,11 @@ async function hashPassword(password) {
       .join('');
 }
   const lastUpdated = new Date(document.lastModified);
-  const isGerman = typeof lang !== 'undefined' && lang === "de";
-  const options = { year: 'numeric', month: 'long', day: 'numeric' };
-  const formattedDate = lastUpdated.toLocaleDateString(isGerman ? "de-DE" : "en-US", options);
-  const label = isGerman ? "Letzte Änderung:" : "Last updated:";
-  document.getElementById("last-updated-text").textContent = `${label} ${formattedDate}`;
+const options = { year: 'numeric', month: 'long', day: 'numeric' };
+const formattedDate = lastUpdated.toLocaleDateString(selectedLanguage === "de" ? "de-DE" : "en-US", options);
+const label = selectedLanguage === "de" ? "Letzte Änderung:" : "Last updated:";
+document.getElementById("last-updated-text").textContent = `${label} ${formattedDate}`;
+
 
 function switchLanguage(lang) {
   selectedLanguage = lang;
